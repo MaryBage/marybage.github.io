@@ -1,0 +1,81 @@
+
+@font-face {
+  font-family: 'Gabriola';
+  src: url('../fonts/Gabriola.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'BeforeTheRain';
+  src: url('../fonts/BeforeTheRain.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'ArmBoloragir';
+  src: url('../fonts/ArmBoloragir.ttf')  format('truetype')
+}
+
+
+body {
+	
+	font-family: 'Gabriola', Fallback, sans-serif;
+	/*background-image: url(../images/8087815.png);
+	background-image: url(../images/body_bg.jpg);*/
+	background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+	height: 100 vh;
+	width: 100 vw;
+	/*position: relative;
+	background-size: cover;*/
+
+	
+}
+header {
+	
+	font-family: 'BeforeTheRain', Fallback, sans-serif;
+	font-size: 15pt;
+	
+}
+header img {
+	
+	width: 50px;
+	
+}
+footer img {
+	
+	width: 30px;
+	
+}
+#mydiv{
+	
+	/*font-family: 'ArmBoloragir';*/
+	position: center;
+    height: 100 vh;
+    width: 100 vw;
+	float: none;
+	
+    
+	
+}
+#mydiv img{
+	
+width: 270px; 
+	
+}
+#mydiv div{
+	
+padding: 20px; 
+	
+}
+#mystory{
+	
+	float: left;
+}
+#mydreams{
+	float: left;
+	/*background-image: url(../images/body_bg.jpg);*/
+}
+#mynutrition{
+	
+	float: left;
+}
