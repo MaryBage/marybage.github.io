@@ -78,7 +78,7 @@
 			margin-top: -28px;
 	}
 	#blocks{
-		
+		clear: both;
 		font-family: 'Gabriola', Fallback, sans-serif;
 		text-align: center;
 		max-width: 990px;
