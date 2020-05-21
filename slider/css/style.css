@@ -1,0 +1,101 @@
+.slideshow-container {
+	max-width:1000px;
+	position:relative;
+	margin:auto;
+}
+
+img {vertical-align: middle;}
+
+.prev, .next {
+	cursor:pointer;
+	position:absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 10px;
+	transition: 0.6s ease;
+	
+		
+}
+
+.prev {
+	left:-100px;
+	border-radius: 0 3px 3px 0;
+	
+}
+
+.next img {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+
+.next {
+	right:-100px;
+	border-radius: 3px 0 0 3px;
+	
+}
+
+.prev:hover, .next:hover {
+	background-color:rgba(0,0,0,0.8);
+	
+}
+
+.desctiption {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.switcher {
+	cursor:pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 5px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	
+}
+
+.active,  .switcher:hover {
+	background-color: #717171;
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+/*footer {
+	max-width:1000px;
+	position:relative;
+	margin:auto;
+	background-image: url(../SliderImages/footer1.JPG);
+	width: 1000px;
+	height: 625px;
+}*/
+
+@-webkit-keyframes fade{
+	from{opacity: .4}
+	to{opacity:1}
+}
+
+@keyframes fade{
+	from{opacity: .4}
+	to{opacity:1}
+}
+
+@media only screen and (max-width: 300px) {
+  .desctiption {font-size: 11px}
+}
