@@ -50,10 +50,8 @@ img {vertical-align: middle;}
 }*/
 
 @keyframes bg {
-	0% {background-color: rgba(255,255,255,0.3);font-size: 15pt; color: #000;}
-	25% {background-color: rgba(255,255,255,0.9);font-size: 25pt; color: #000;} 
-	50% {background-color: rgba(255,255,255,0.9);font-size: 25pt; color: #000;}
-	100 %{background-color: rgba(255,255,255,0.3);font-size: 15pt; color: #000;}
+	from{font-size: 25pt; color: #fff;}
+	to{font-size: 0pt; color: #fff;} 
 }
 
 .desctiption {
@@ -62,7 +60,7 @@ img {vertical-align: middle;}
 	margin:auto;
 	border-radius: 40px;
     font-family: 'BeforeTheRain', Fallback, sans-serif;
-	font-size: 20pt;
+	font-size: 0pt;
 	color: #fff;
     padding: 0 50px;
     position: absolute;
@@ -72,7 +70,7 @@ img {vertical-align: middle;}
     width: auto;
     text-align: left;
     animation-name: bg;
-	animation-duration: 4s;
+	animation-duration: 5s;
 }
 #switchersDiv{
 
