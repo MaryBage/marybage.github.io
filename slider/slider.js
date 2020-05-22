@@ -1,8 +1,30 @@
 
+let cities = [
+	'amsterdam',
+	'berlin',
+	'brussels',
+	'lisbon',
+	'london',
+	'madrid',
+	'milan',
+	'paris',
+	'vienna'
+];
+
+let container = document.getElementById("slideshow-container");
+
+for (let city of cities){
+	container.innerHTML += `<div class='slide fade'>\n
+								<img src="images/${city}.JPG" style="width:100%">\n
+								<div class='desctiption'>${city}</div>\n
+							</div>`;
+}
+
 let slides = document.getElementsByClassName("slide");
 
 for (let i = 0; i < slides.length; i++){
-	document.getElementById("switchersDiv").innerHTML += `<span class='switcher' onclick='curSlide(${i})'></span>`;
+	//document.getElementById("switchersDiv").innerHTML += `<span class='switcher' onclick='curSlide(${i})'></span>`;
+	document.getElementById("switchersDiv").innerHTML += `<img  class='switcher' onclick='curSlide(${i})' width='30px' src='images/plane1.png'>`;
 }
 
 let switchers = document.getElementsByClassName("switcher");
@@ -45,13 +67,15 @@ function autoSlideshow () {
   
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+	switchers[i].innerHTML = '';
 	switchers[i].className = switchers[i].className.replace("active","");
   }
   slideIndx++;
   if (slideIndx > slides.length) {slideIndx = 1}
   slides[slideIndx-1].style.display = "block";
-  switchers[slideIndx - 1].className += " active"
-  initial = setTimeout(autoSlideshow, 10000); // Change image every 2 seconds
+  switchers[slideIndx - 1].className += " active";
+  switchers[slideIndx - 1].src  = "images/switcher_s.png";
+  initial = setTimeout(autoSlideshow, 2000); // Change image every 2 seconds
 }
 
 function pagingSlide(n){
@@ -70,6 +94,7 @@ function showSlides(n){
 
 	slides[slideIndx - 1].style.display = "block";
 	switchers[slideIndx - 1].className += " active";
+	switchers[slideIndx - 1].innerHTML = "<img src='images/switcher_s.png'> ";
 }
 
 
