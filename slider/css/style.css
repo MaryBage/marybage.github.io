@@ -1,8 +1,7 @@
-#slideshow-container {
+.slideshow-container {
 	max-width:1000px;
 	position:relative;
 	margin:auto;
-	z-index: 1;
 }
 
 img {vertical-align: middle;}
@@ -57,28 +56,17 @@ img {vertical-align: middle;}
 
 .switcher {
 	cursor:pointer;
-	/*height: 13px;
-	width: 13px;*/
+	height: 13px;
+	width: 13px;
 	margin: 0 5px;
-	/*margin: -170px 20px 0 20px;*/ 
-	z-index: 2;
-	/*background-color: #bbb;
-	border-radius: 50%;*/
+	background-color: #bbb;
+	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.6s ease;
-	-webkit-transform: scale(-1, 1);
-	  -moz-transform: scale(-1, 1);
-	  -ms-transform: scale(-1, 1);
-	  -o-transform: scale(-1, 1);
-	  transform: scale(-1, 1);
 	
 }
 
-/*.active,  .switcher:hover {
-	background-color: #717171;
-}*/
-
-.switcher:hover {
+.active,  .switcher:hover {
 	background-color: #717171;
 }
 
