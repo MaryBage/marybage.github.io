@@ -1,8 +1,32 @@
 
+let cities = [
+	'amsterdam',
+	'berlin',
+	'brussels',
+	'lisbon',
+	'london',
+	'madrid',
+	'milan',
+	'paris',
+	'vienna'
+];
+
+let container = document.getElementById("slideshow-container");
+
+for (let city of cities){
+	let desc = city.charAt(0).toUpperCase() + city.slice(1);
+	container.innerHTML += `<div class='slide fade'>\n
+								<img src="images/${city}.JPG" style="width:100%">\n
+								<div class='desctiption'>${desc}</div>\n
+							</div>`;
+}
+
 let slides = document.getElementsByClassName("slide");
 
 for (let i = 0; i < slides.length; i++){
-	document.getElementById("switchersDiv").innerHTML += `<span class='switcher' onclick='curSlide(${i})'></span>`;
+	
+	document.getElementById("switchersDiv").innerHTML += `\n
+					<div><img  class='switcher' onclick='curSlide(${i})' src='images/plane1.png'></div>`;
 }
 
 let switchers = document.getElementsByClassName("switcher");
@@ -37,64 +61,66 @@ function bodyBckgrnd(){
 
 let initial;
 
-let slideIndx = 1;
+let slideIndx = 0;
 
 autoSlideshow ();
 
 function autoSlideshow () {
   
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-	switchers[i].className = switchers[i].className.replace("active","");
-  }
-  slideIndx++;
-  if (slideIndx > slides.length) {slideIndx = 1}
-  slides[slideIndx-1].style.display = "block";
-  switchers[slideIndx - 1].className += " active"
-  initial = setTimeout(autoSlideshow, 10000); // Change image every 2 seconds
+	for (let i = 0; i < slides.length; i++) {
+	slides[i].style.display = "none";
+	switchers[i].src  = "images/plane1.png";
+	switchers[i].style.width  = "40px";
+	switchers[i].style.transform='scale(1)';
+	
+	switchers[i].addEventListener("mouseover", function( event ) {   
+		event.target.style.transform='scale(2)';
+	});
+	switchers[i].addEventListener("mouseout", function( event ) {   
+		event.target.style.transform='scale(1)';
+	});
+	}
+	slideIndx++;
+
+	if (slideIndx > slides.length) {slideIndx = 1;}
+	if (slideIndx < 0 ) {slideIndx = slides.length;}
+
+	slides[slideIndx-1].style.display = "block";
+
+
+	switchers[slideIndx - 1].style.width  = "auto";
+	switchers[slideIndx - 1].style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)' ;
+	switchers[slideIndx - 1].addEventListener("mouseover", function( event ) {   
+		event.target.style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)';
+	});
+	switchers[slideIndx - 1].addEventListener("mouseout", function( event ) {   
+		event.target.style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)';
+	});
+	switchers[slideIndx - 1].src  = "images/switcher_s200.png";
+	initial = setTimeout(autoSlideshow, 5000); 
 }
 
 function pagingSlide(n){
-	showSlides(slideIndx += n);
-}
-
-function showSlides(n){
-	
-	slideIndx = n > slides.length ? 1 : n < 1 ? slides.length : n;
-	
-	for(let i = 0; i < slides.length; i++){
-		slides[i].style.display = "none";
-		console.log(i+'--'+switchers[i].className);
-		switchers[i].className = switchers[i].className.replace("active","");
-	}
-
-	slides[slideIndx - 1].style.display = "block";
-	switchers[slideIndx - 1].className += " active";
-}
-
-
-function curSlide(i){
-	
+	console.log(slideIndx+' -> '+n);
 	clearTimeout(initial);
-	slideIndx = i - 1;
+	if (slideIndx == 1 && n == -2 ) {slideIndx = slides.length - 1;}
+	else {slideIndx += n;}
+	console.log(slideIndx+' -> '+n);
 	autoSlideshow();
 	
 }
 
-
-
-
-
-function slider(){
-
-		let imgs = document.getElementsByClassName('slider-img');
-		for (let img of imgs){
-			console.log(img);
-					setInterval(() => img.style.zIndex = '1',3000);
-			}
+function curSlide(i){
 	
+	clearTimeout(initial);
+	slideIndx = i;
+	switchers[slideIndx].addEventListener("mouseover", function( event ) {   
+		event.target.style.transform = 'scale(1)';
+	});
+	autoSlideshow();
 	
 }
+
 
 
 
