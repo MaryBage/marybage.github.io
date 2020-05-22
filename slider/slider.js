@@ -16,7 +16,7 @@ let container = document.getElementById("slideshow-container");
 for (let city of cities){
 	let desc = city.charAt(0).toUpperCase() + city.slice(1);
 	container.innerHTML += `<div class='slide fade'>\n
-								<img src="images/${city}.JPG" style="width:100%">\n
+								<img src="images/${city}.jpg" style="width:100%">\n
 								<div class='desctiption'>${desc}</div>\n
 							</div>`;
 }
