@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Gabriola';
-  src: url('../fonts/Gabriola.ttf')  format('truetype')
+  src: url('../../fonts/Gabriola.ttf')  format('truetype')
 }
 
 h1{
