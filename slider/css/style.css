@@ -1,8 +1,19 @@
-
 @font-face {
-  font-family: 'BeforeTheRain';
-  src: url('../../fonts/BeforeTheRain.ttf')  format('truetype')
+  font-family: 'Gabriola';
+  src: url('../fonts/Gabriola.ttf')  format('truetype')
 }
+
+h1{
+	
+		font-family: 'Gabriola', Fallback, sans-serif;
+		font-size:40pt;
+		font-weight:bold;
+		text-align: center;
+		padding: 0;
+		margin: auto;
+		width: 100%;	
+	
+	}
 
 #slideshow-container {
 	max-width:1000px;
@@ -41,26 +52,18 @@ img {vertical-align: middle;}
 	background-color:rgba(0,0,0,0.8);
 	
 }
-/*
-@keyframes bg {
-  0%   {background-color: rgba(255,255,255,0);}
-  25%  {background-color: rgba(255,255,255,0.3);}
-  50%  {background-color: rgba(255,255,255,0.6);}
-  100% {background-color: rgba(255,255,255,0.9);}
-}*/
 
 @keyframes bg {
-	from{font-size: 25pt; color: #fff;}
+	from{font-size: 60pt; color: #fff;}
 	to{font-size: 0pt; color: #fff;} 
 }
 
 .desctiption {
 	max-width:1000px;
-	position:relative;
 	margin:auto;
 	border-radius: 40px;
-    font-family: 'BeforeTheRain', Fallback, sans-serif;
-	font-size: 0pt;
+	font-family: 'Gabriola', Fallback, sans-serif;
+  	font-size: 0pt;
 	color: #fff;
     padding: 0 50px;
     position: absolute;
@@ -88,6 +91,12 @@ img {vertical-align: middle;}
 	align-items: flex-end;
 	flex-basis: 200px;
 	
+}
+
+.flex-container > div {
+
+  margin: 0 5px;
+
 }
 .switcher {
 	cursor:pointer;

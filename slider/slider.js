@@ -1,6 +1,7 @@
 
 let cities = [
 	'amsterdam',
+	'athens',
 	'berlin',
 	'brussels',
 	'lisbon',
@@ -16,7 +17,7 @@ let container = document.getElementById("slideshow-container");
 for (let city of cities){
 	let desc = city.charAt(0).toUpperCase() + city.slice(1);
 	container.innerHTML += `<div class='slide fade'>\n
-								<img src="images/${city}.jpg" style="width:100%">\n
+								<img src="images/${city}.png" style="width:100%">\n
 								<div class='desctiption'></div>\n
 							</div>`;
 }
@@ -27,7 +28,7 @@ let desctiption = document.getElementsByClassName("desctiption");
 for (let i = 0; i < slides.length; i++){
 	
 	document.getElementById("switchersDiv").innerHTML += `\n
-					<div><img  class='switcher' onclick='curSlide(${i})' src='images/plane1.png'></div>`;
+					<div><img style="width:100%" class='switcher' onclick='curSlide(${i})' src='images/${cities[i]}_flag.png'></div>`;
 }
 
 let switchers = document.getElementsByClassName("switcher");
@@ -67,20 +68,22 @@ let slideIndx = 0;
 autoSlideshow ();
 
 function autoSlideshow () {
-  
+  console.log(`images/${cities[slideIndx]}_flag.png`);
 	for (let i = 0; i < slides.length; i++) {
 	slides[i].style.display = "none";
-	switchers[i].src  = "images/plane1.png";
-	switchers[i].style.width  = "40px";
+	switchers[i].src  = `images/${cities[i]}_flag.png`;
 	switchers[i].style.transform='scale(1)';
 	desctiption[i].innerHTML = '';
 	
-	switchers[i].addEventListener("mouseover", function( event ) {   
-		event.target.style.transform='scale(2)';
+	switchers[i].addEventListener("mouseover", function( event ) { 
+			event.target.src  = 'images/plane2.png';	
+		
 	});
+		
 	switchers[i].addEventListener("mouseout", function( event ) {   
-		event.target.style.transform='scale(1)';
+		event.target.src  = `images/${cities[i]}_flag.png`;
 	});
+	
 	}
 	slideIndx++;
 
@@ -89,16 +92,18 @@ function autoSlideshow () {
 
 	slides[slideIndx-1].style.display = "block";
 
-
+	switchers[slideIndx - 1].src  = "images/switcher_s200.png";	
 	switchers[slideIndx - 1].style.width  = "100%";
 	switchers[slideIndx - 1].style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)' ;
-	switchers[slideIndx - 1].addEventListener("mouseover", function( event ) {   
+	switchers[slideIndx - 1].addEventListener("mouseover", function( event ) {  
+		switchers[slideIndx - 1].src  = "images/switcher_s200.png";	
 		event.target.style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)';
 	});
-	switchers[slideIndx - 1].addEventListener("mouseout", function( event ) {   
+	switchers[slideIndx - 1].addEventListener("mouseout", function( event ) {
+		switchers[slideIndx - 1].src  = "images/switcher_s200.png";
 		event.target.style.transform = slideIndx < 6 ?  'scale(1)' : 'scale(-1, 1)';
 	});
-	switchers[slideIndx - 1].src  = "images/switcher_s200.png";
+	
 
 	typing(desctiption[slideIndx - 1],cities[slideIndx - 1]);
 	initial = setTimeout(autoSlideshow, 5000); 
@@ -118,8 +123,8 @@ function curSlide(i){
 	
 	clearTimeout(initial);
 	slideIndx = i;
-	switchers[slideIndx].addEventListener("mouseover", function( event ) {   
-		event.target.style.transform = 'scale(1)';
+	switchers[i].addEventListener("mouseover", function( event ) {   
+		event.target.src  = `images/${cities[slideIndx]}_flag.png`;
 	});
 	autoSlideshow();
 	
@@ -133,7 +138,7 @@ function typing(el, txt, i = 0) {
 	return;
   
  i++;
- setTimeout(() => typing(el, txt, i), 100);
+ setTimeout(() => typing(el, txt, i), Math.round(1000/txt.length));
  
 }
 
