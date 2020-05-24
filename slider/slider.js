@@ -33,34 +33,6 @@ for (let i = 0; i < slides.length; i++){
 
 let switchers = document.getElementsByClassName("switcher");
 
-
-/*bodyBckgrnd();
-
-function bodyBckgrnd(){
-
-	let now = new Date();
-	let hour = now.getHours();
-	let body = document.getElementsByTagName('body')[0];
-
-	if(hour < 5){
-		body.style.backgroundImage = 'url(SliderImages/bg6.JPG)'
-	}
-
-	else if (hour < 12){
-		body.style.backgroundImage = 'url(SliderImages/bg4.JPG)'
-	}
-
-	else if (hour < 19){
-		body.style.backgroundImage = 'url(SliderImages/bg.JPG)'
-	}
-
-	else {
-		body.style.backgroundImage = 'url(SliderImages/bg5.JPG)'
-	}
-
-}*/
-
-
 let initial;
 
 let slideIndx = 0;
