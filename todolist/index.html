@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link type="image/png" href="images/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+	 <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lobster"> 
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+
+<div id='bgImg'><img src='images/bg.png' width='100%'>
+	<div class='inpts'>
+		<div><input autofocus class='add-task' type='text' onkeypress ='sbmtTsk(event, this.value)' placeholder='Add a task...'> <img src='images/add-icon.png'  onclick='addTask()'></div>
+		<div><img src='images/search-icon.png'><input class='add-task' type='text' oninput ='sbmtSrch(event, this.value)' placeholder='Search...'></div>
+	</div>
+	<div id='todolist' class='flex-container'></div>
+
+</div>
+<script src='todolist.js'></script>
+</body>
+
+</html>
