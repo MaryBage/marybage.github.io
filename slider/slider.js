@@ -17,7 +17,7 @@ let container = document.getElementById("slideshow-container");
 for (let city of cities){
 	let desc = city.charAt(0).toUpperCase() + city.slice(1);
 	container.innerHTML += `<div class='slide fade'>\n
-								<img src="images/${city}.png" style="width:100%">\n
+								<img src="images/${city}.png" style="width:100%" onclick='playPause(event)'>\n
 								<div class='desctiption'></div>\n
 							</div>`;
 }
@@ -114,6 +114,17 @@ function typing(el, txt, i = 0) {
  
 }
 
-
+function playPause(e){
+	
+	let el = document.getElementById('playPause');
+	console.log(typingInitial);
+	if (e.target.classList.toggle('paused')) {
+		clearTimeout(initial);
+	}
+	else {
+		autoSlideshow();
+	}
+		
+}
 
 
