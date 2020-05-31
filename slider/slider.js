@@ -17,7 +17,7 @@ let container = document.getElementById("slideshow-container");
 for (let city of cities){
 	let desc = city.charAt(0).toUpperCase() + city.slice(1);
 	container.innerHTML += `<div class='slide fade'>\n
-								<img src="images/${city}.png" style="width:100%" onclick='playPause(event)'>\n
+								<img src="images/${city}.png" style="width:100%" onclick="playPause(event)">\n
 								<div class='desctiption'></div>\n
 							</div>`;
 }
@@ -40,8 +40,7 @@ let slideIndx = 0;
 autoSlideshow ();
 
 function autoSlideshow () {
-  console.log(`images/${cities[slideIndx]}_flag.png`);
-	for (let i = 0; i < slides.length; i++) {
+  	for (let i = 0; i < slides.length; i++) {
 	slides[i].style.display = "none";
 	switchers[i].src  = `images/${cities[i]}_flag.png`;
 	switchers[i].style.transform='scale(1)';
@@ -116,15 +115,9 @@ function typing(el, txt, i = 0) {
 
 function playPause(e){
 	
-	let el = document.getElementById('playPause');
-	console.log(typingInitial);
-	if (e.target.classList.toggle('paused')) {
-		clearTimeout(initial);
-	}
-	else {
-		autoSlideshow();
-	}
-		
+	if (e.target.classList.toggle('paused')) clearTimeout(initial);
+	else autoSlideshow();
+
 }
 
 
