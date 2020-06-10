@@ -1,6 +1,4 @@
 let fgrsArr = ['I', 'O', 'L', 'J', 'Z', 'S', 'T'];
-let fgrsColors =['#00e4ff'    ]
-
 let fgrsObj = {
 	I: '#00e4ff',
 	O: '#b071d1',
@@ -322,7 +320,7 @@ function go(){
 	
 }
 
-console.log(parameters);
+
 
 function startGame(){
 	
@@ -564,7 +562,7 @@ function move(){
 				
 				if (parameters.speed > 300){
 					
-					if((parameters.speed == 900 && score > 9) || (parameters.speed == 600 && score > 199)){
+					if((parameters.speed == 900 && score > 149) || (parameters.speed == 600 && score > 249)){
 				
 							
 							if(rdy == undefined){
