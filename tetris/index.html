@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--<link type="image/png" href="images/favicon.ico" rel="shortcut icon">-->
+    <link rel="stylesheet" href="css/style.css">
+	
+	 <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Acme"> 
+
+</head>
+<body>
+
+<div class='gameField'>
+	<div class='tetris'></div>
+</div>
+<div id='info'>
+		<div class='txt'>Next figure</div>
+		<div id='next_piece'></div>
+		<div id='score' class='txt'></div>
+		<div id='msg' class='txt'></div>
+		
+	</div>
+
+
+
+<div class='overlay'></div>
+<div class='modal'>
+	<div class='txt'><img src='./images/tetris.png' width='35%'></div>
+	<div><input type='text' placeholder="What's your name?" id='name'/></div>
+	<div class='txt'>Deactivate the figures you don't like</div>
+	<div class='choose_fgrs'></div>
+	<div class='txt'>Choose a level</div>
+	<div class='level'>
+		<label><input type='radio' name='level' value = '900'>Easy</label>
+		<label><input type='radio' name='level' value = '600'>Middle</label>
+		<label><input type='radio' name='level' value = '300'>Hard</label>
+	</div>
+	
+	<div><button class='txt' onclick='go()'>Let's start!</button></div>
+	
+</div>
+
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src='tetris.js'></script>
+</body>
+
+</html>
