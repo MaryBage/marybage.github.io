@@ -564,10 +564,11 @@ function move(){
 				
 				if (parameters.speed > 300){
 					
-					if((parameters.speed == 900 && score > 99) || (parameters.speed == 600 && score > 199)){
+					if((parameters.speed == 900 && score > 9) || (parameters.speed == 600 && score > 199)){
 				
-							//rdy = rdy == undefined ? confirm('Are you ready for next level?') : rdy;
+							
 							if(rdy == undefined){
+								clearInterval(interval);
 								swal("Are you ready for next level?", {
 												  buttons: {
 													cancel: "No",
@@ -578,8 +579,12 @@ function move(){
 												  switch (value) {
 												 
 													case "ok":
+														rdy = true;
 														parameters.speed -=300;
-														clearInterval(interval);
+														interval = setInterval(() => move(), parameters.speed);
+													break;
+													default:
+														rdy = false;
 														interval = setInterval(() => move(), parameters.speed);
 													break;
 
@@ -625,6 +630,7 @@ function move(){
 									} 
 									interval = setInterval(() => move(), parameters.speed);
 									window.addEventListener('keydown', keyEvnts);
+									gameField.addEventListener('click', addOpcty);
 								
 								break;
 								

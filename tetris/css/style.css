@@ -32,11 +32,10 @@ body {
 	margin:55px 40px;
 	position: relative;
 	overflow:hidden;
-	width: 501px;
-	height: 900px;
-	border-right: 1px solid #5b5b5b;
-	border-bottom: 1px solid #5b5b5b;
-	border-top: 1px solid #5b5b5b;
+	width: 400px;
+	height: 640px;
+	border: 1px solid #5b5b5b;
+	border-left: none;
 	float:left;
 
 }
@@ -61,15 +60,15 @@ body {
 }
 
 #next_piece{
-	width: 290px;
+	width: 220px;
 	display: flex;
 	flex-wrap: wrap;
 	bottom: 0;
 }
 
 @keyframes niceOuts {
-	from{background-color: #69b625;} /* transform: translateX(0);}*/
-	to{background-color:none;}/* transform: translateX(100px);} */
+	from{background-color: #69b625;} 
+	to{background-color:none;}
 }
 
 
@@ -80,22 +79,20 @@ body {
 	opacity: 0;
 }
 .tetris {
-	width: 500px;
-	height: 1000px;
+	width: 403px;
+	height: 800px;
 	display: flex;
 	overflow: hidden;
 	flex-wrap: wrap;
 	position: absolute;
 	bottom: 0;
 	background-color: blanchedalmond;
-	
-	
 }
 
 .cell {
 	
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	/*border: 1px solid #5b5b5b;*/
 	border-top: 1px solid #5b5b5b;
     border-left: 1px solid #5b5b5b;
@@ -104,8 +101,8 @@ body {
 
 .cell_next_piece {
 	
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	
 	
 }
@@ -131,7 +128,7 @@ input {
 	position: fixed;
 	
 	width: 700px;
-	height: 900px;
+	height: 700px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
@@ -197,7 +194,7 @@ input {
 }
 .txt {
 	font-weight:bold;
-	font-size: 35px;
+	font-size: 30px;
 	padding: 5px;
 	
 }
