@@ -33,7 +33,7 @@ let addTsk = document.querySelector('.add-task');
 			tskTxt.addEventListener('click', () => lineTrgh(event));
 			//tskTxt.addEventListener('dblclick',() => editTsk(event));
 			tskTxt.innerHTML = val;
-			localStorage.setItem('task',JSON.stringify({id : Date().now.toString(), task: val}));
+			localStorage.setItem('task',JSON.stringify({id : Date.now().toString(), task: val}));
 			
 			let editTask = document.createElement("div");
 			editTask.setAttribute('class','editTsk');
